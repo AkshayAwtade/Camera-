@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WJb-DF-RwG">
+                                <rect key="frame" x="40" y="70" width="520" height="430"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-AI-1oA">
+                                <rect key="frame" x="199" y="526" width="202" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJE-cK-f6J">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                        <state key="normal" title="Capture Image"/>
+                                        <connections>
+                                            <action selector="ButtoncaptureImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2f-l2-UlR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOq-qm-D5Y">
+                                        <rect key="frame" x="101" y="0.0" width="101" height="30"/>
+                                        <state key="normal" title="Select Image"/>
+                                        <connections>
+                                            <action selector="buttonSelectPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9o-hv-o1C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eJE-cK-f6J" secondAttribute="height" multiplier="101:15" id="JTf-Mt-hOx"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-bj-7Wh">
+                                <rect key="frame" x="506" y="526" width="32" height="30"/>
+                                <state key="normal" title="SMS"/>
+                                <connections>
+                                    <action selector="butonSMSTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdl-mM-jmO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-Tz-dx1">
+                                <rect key="frame" x="56" y="526" width="30" height="30"/>
+                                <state key="normal" title="Mail"/>
+                                <connections>
+                                    <action selector="buttonMailTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JP9-2I-Czo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="SQh-bj-7Wh" secondAttribute="trailing" constant="42" id="12k-Ef-Nex"/>
+                            <constraint firstItem="WJb-DF-RwG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="6k1-rv-y2u"/>
+                            <constraint firstItem="g9e-AI-1oA" firstAttribute="top" secondItem="WJb-DF-RwG" secondAttribute="bottom" constant="26" id="9J9-E2-vqg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SQh-bj-7Wh" secondAttribute="bottom" constant="44" id="IjH-qv-0On"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qsq-Tz-dx1" secondAttribute="bottom" constant="44" id="SsW-gM-ViI"/>
+                            <constraint firstItem="qsq-Tz-dx1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="W6n-dZ-IV3"/>
+                            <constraint firstItem="g9e-AI-1oA" firstAttribute="centerX" secondItem="WJb-DF-RwG" secondAttribute="centerX" id="nxM-V3-p3w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WJb-DF-RwG" secondAttribute="trailing" constant="20" id="uhk-yY-o9y"/>
+                            <constraint firstItem="WJb-DF-RwG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="xAr-Aa-Iom"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WJb-DF-RwG" secondAttribute="bottom" constant="100" id="zcq-Ps-ZBt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Buttonmail" destination="qsq-Tz-dx1" id="GOl-Zh-mk3"/>
+                        <outlet property="butonSMS" destination="SQh-bj-7Wh" id="rx2-CE-p7a"/>
+                        <outlet property="image" destination="WJb-DF-RwG" id="dQH-mV-dh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="217" y="284"/>
         </scene>
     </scenes>
 </document>

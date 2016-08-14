@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ViewController : UIViewController
 
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *butonSMS;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+- (IBAction)butonSMSTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *Buttonmail;
+
+- (IBAction)ButtoncaptureImageTapped:(id)sender;
+- (IBAction)buttonMailTapped:(id)sender;
+
+- (IBAction)buttonSelectPhotoTapped:(id)sender;
 
 @end
 
